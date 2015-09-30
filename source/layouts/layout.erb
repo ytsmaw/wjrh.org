@@ -1,18 +1,5 @@
-<!--Page last updated on <%= Time.now %>-->
-<!--
- __          __       _   _____    _    _ 
- \ \        / /      | | |  __ \  | |  | |
-  \ \  /\  / /       | | | |__) | | |__| |
-   \ \/  \/ /    _   | | |  _  /  |  __  |
-    \  /\  /    | |__| | | | \ \  | |  | |
-     \/  \/      \____/  |_|  \_\ |_|  |_|
-                                         
-   YOYOYO WHATSUP
-   JUST WANTED TO SAY THAT YOU MIGHT BE COOOL.
-   LOVE, FOLKS AT WJRH ENGINEERING.
 
--->
-
+<%= partial "partials/top_of_page" %>
 
 <!doctype html>
 <html>
@@ -26,12 +13,14 @@
   <title><%= current_page.data.title || "WJRH" %></title>
 
   <%= stylesheet_link_tag "all" %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <%= javascript_include_tag  "all" %>
 </head>
 
 <body>
+  <%= partial "partials/player" %>
   <div class="container">
-    <%= partial "partials/navbar_player" %>
+    <%= partial "partials/navbar" %>
     <%= yield %>
   </div>
   <%= partial "partials/footer" %>

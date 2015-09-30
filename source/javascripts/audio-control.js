@@ -25,8 +25,8 @@ function PlayAudio()
 function PauseAudio()
 {
 	audioElement.pause();
-	listenButton.innerHTML = "PAUSED";
-	liveIcon.innerHTML = "<i class=\"fa fa-pause\"></i>";
+	listenButton.innerHTML = "";
+	liveIcon.innerHTML = "<i class=\"fa fa-2x fa-pause\"></i>";
 }
 
 //this is the action that comes from the toggle button

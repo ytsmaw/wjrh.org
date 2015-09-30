@@ -1,0 +1,45 @@
+.fixed-player {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 50px;
+  background-color: #ccc;
+/*  border-bottom-style: solid;
+  border-bottom: thin solid #fac165;*/
+  font-family: "Open Sans Condensed", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.player-extra-spacing{
+    margin-top: 90px;
+}
+
+.player-container{
+	display: block;
+  	width: 960px;
+  	margin: 0 auto;
+  	text-overflow: ellipsis;
+}
+
+li.nowplaying {
+	display: inline;
+	line-height: 50px;
+	padding-right: 20px;
+	vertical-align: middle;
+}
+
+li.nowplaying i{
+    color:white;
+    margin-right: .3em;
+}
+
+li.nowplaying .fa-2x {
+    color:white;
+    vertical-align: middle;
+}
+
+li.nowplaying div{
+    display: inline;
+}
+

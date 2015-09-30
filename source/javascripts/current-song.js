@@ -5,15 +5,15 @@ setInterval( "updateSongInfo();", 7000 );
 $(function() {
 	updateSongInfo = function(){
 
-		$('#djdata').load("show_dj.php").fadeIn("slow");
-		$('#songdata').load("show_song.php").fadeIn("slow");
+		$('#djdata').load("/show_dj.php").fadeIn("slow");
+		$('#songdata').load("/show_song.php").fadeIn("slow");
 	}
 });
 
 //first refresh
 $(document).ready(function(){
-		$('#djdata').load("show_dj.php").fadeIn("slow");
-		$('#songdata').load("show_song.php").fadeIn("slow");
+		$('#djdata').load("/show_dj.php").fadeIn("slow");
+		$('#songdata').load("/show_song.php").fadeIn("slow");
 });
 
 

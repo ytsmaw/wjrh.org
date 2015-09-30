@@ -4,7 +4,7 @@
   left: 0;
   z-index: 1;
   width: 100%;
-  height: 50px;
+  height: 40px;
   background-color: #ccc;
 /*  border-bottom-style: solid;
   border-bottom: thin solid #fac165;*/
@@ -12,7 +12,7 @@
 }
 
 .player-extra-spacing{
-    margin-top: 90px;
+    margin-top: 80px;
 }
 
 .player-container{
@@ -24,19 +24,22 @@
 
 li.nowplaying {
 	display: inline;
-	line-height: 50px;
+	line-height: 40px;
 	padding-right: 20px;
 	vertical-align: middle;
+  color:#555;
+
 }
 
 li.nowplaying i{
-    color:white;
     margin-right: .3em;
 }
 
 li.nowplaying .fa-2x {
-    color:white;
+    color:#555;
     vertical-align: middle;
+    cursor: pointer;
+    cursor: hand;
 }
 
 li.nowplaying div{

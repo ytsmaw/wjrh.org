@@ -1,9 +1,8 @@
 var listenButton = document.getElementById('listen-button');
-var liveIcon = document.getElementById('liveicon');
 
 var audioElement = document.createElement('audio');
-audioElement.setAttribute('src', 'http://wjrh.org:8000/WJRHlow');
-//audioElement.setAttribute('preload', 'auto');
+audioElement.src = "http://wjrh.org:8000/WJRHlow";
+audioElement.preload = 'auto';
 
 var playClicked = false;
 var loaded = false;
@@ -12,9 +11,8 @@ var loaded = false;
 function PlayAudio()
 {
 	playClicked = true;
+	listenButton.innerHTML = "<i class=\"fa fa-2x fa-fw fa-spinner fa-pulse\"></i>";
 	audioElement.load;
-	listenButton.innerHTML = "LOADING";
-	liveIcon.innerHTML = "<i class=\"fa fa-cloud-download\"></i>";
 	audioElement.play();
 	if(loaded){
 		liveOnAir();
@@ -25,8 +23,7 @@ function PlayAudio()
 function PauseAudio()
 {
 	audioElement.pause();
-	listenButton.innerHTML = "";
-	liveIcon.innerHTML = "<i class=\"fa fa-2x fa-pause\"></i>";
+	listenButton.innerHTML = "<i class=\"fa fa-2x fa-fw fa-play\"></i>";
 }
 
 //this is the action that comes from the toggle button
@@ -40,8 +37,7 @@ function togglePlay() {
 
 //called when we want "live on air" displayed on the button
 function liveOnAir(){
-	listenButton.innerHTML = "LIVE ON AIR";
-    liveIcon.innerHTML = "• ";
+	listenButton.innerHTML = "<i class=\"fa fa-2x fa-fw fa-pause\"></i>";
 }
 
 //called by the audio element when the data is loaded enough to play

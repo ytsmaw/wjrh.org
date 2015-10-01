@@ -5,9 +5,9 @@
   z-index: 1;
   width: 100%;
   height: 40px;
-  background-color: #ccc;
-/*  border-bottom-style: solid;
-  border-bottom: thin solid #fac165;*/
+  background-color: #f5f5f5;
+  border-bottom-style: solid;
+  border-bottom: thin solid #aaa;
   font-family: "Open Sans Condensed", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -27,7 +27,7 @@ li.nowplaying {
 	line-height: 40px;
 	padding-right: 20px;
 	vertical-align: middle;
-  color:#555;
+  color:#666
 
 }
 
@@ -36,10 +36,14 @@ li.nowplaying i{
 }
 
 li.nowplaying .fa-2x {
-    color:#555;
     vertical-align: middle;
     cursor: pointer;
     cursor: hand;
+}
+
+ .live-on-air {
+    float: right;
+    padding: 0px !important;
 }
 
 li.nowplaying div{

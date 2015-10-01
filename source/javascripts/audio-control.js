@@ -11,7 +11,7 @@ var loaded = false;
 function PlayAudio()
 {
 	playClicked = true;
-	listenButton.innerHTML = "<i class=\"fa fa-2x fa-fw fa-spinner fa-pulse\"></i>";
+	listenButton.innerHTML = "<i class=\"fa fa-2x fa-fw fa-spinner fa-spin\"></i>";
 	audioElement.load;
 	audioElement.play();
 	if(loaded){

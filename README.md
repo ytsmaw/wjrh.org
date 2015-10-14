@@ -9,12 +9,16 @@ Mac OS X comes prepackaged with both Ruby and Rubygems, however, some of the Mid
 
 Once you have Ruby and RubyGems up and running, execute the following from the command line:
 
+```
 $ gem install middleman
+```
 
 This will install Middleman, its dependencies and the command-line tools for using Middleman.
 
 The installation process will add one new command to your environment, with 3 useful features:
 
+```
 $ middleman init
 $ middleman server
 $ middleman build
+```

@@ -3,9 +3,18 @@
 ###
 # Compass
 ###
+set :markdown_engine, :redcarpet
+set :markdown, :fenced_code_blocks => true, :smartypants => true
 
 activate :directory_indexes
 
+shows = [{:shortname => "vbb", :description => "desc"}]
+shows.each do |show|
+  proxy "/#{show[:shortname]}.html", "/templates/show.html", :locals => { :show => show },:ignore => true
+end
+
+
+page "*.md", :layout => "markdown"
 # Change Compass configuration
 # compass_config do |config|
 #   config.output_style = :compact
@@ -69,7 +78,7 @@ configure :build do
   # activate :asset_hash
 
   # Use relative URLs
-  # activate :relative_assets
+  activate :relative_assets
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"

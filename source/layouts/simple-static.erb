@@ -1,0 +1,13 @@
+<% wrap_layout :layout do %>
+	<div class="row">
+		<div class="twelve columns">
+			<img src="<%= current_page.data.image %>">
+		</div>
+	</div>
+    <div class="row main-title">
+      <div class="eight columns offset-by-two">
+        <%= yield %>
+      </div>
+    </div>
+<% end %>
+  

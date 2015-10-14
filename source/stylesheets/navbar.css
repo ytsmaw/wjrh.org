@@ -1,0 +1,13 @@
+.navbar-list > li {
+	margin: 0rem;
+	list-style-type: none;
+}
+.navbar-list > li > a {
+	text-decoration: none;
+}
+
+.navbar-title {
+	margin: 0rem;
+	font-size: 16px;
+	text-decoration: none;
+}

@@ -1,0 +1,28 @@
+<%-# THIS FILE USES THE DATA FROM THE DATA FOLDER TO AUTOMATICALLY ADD STAFF MEMBERS GO CHANGE POSITIONS AND BOARD MEMBERS THERE PLEASE THANK YOU-%>
+<div class="row">
+	<div class="twelve columns">
+		<img src="https://placeholdit.imgix.net/~text?txtsize=90&bg=104235&txtclr=28e7b5&txt=960%C3%97480&w=960&h=480">
+	</div>
+</div>
+<div class="row main-title">
+	<div class="eight columns offset-by-two columns">
+		<h1>Staff</h3>
+	</div>
+	<div class="eight columns offset-by-two column">
+		<p>We're a 100% student run volunteer based organization and we're one of the biggest organizations on the Lafayette Campus. It doesn't make sense to put everyone who spends considerably amount of time contributing to the station here but we're going to do that anyway.</p>
+
+		<p>We're organized very lightly and in a very flat structure. We have a board that handles coordination and allocation of resources. The board meets every Wednesday that is also a school day at 5 in the station. Besides that you can find a number of workgroups with their own internal organization and ways to contact.</p>
+	</div>
+</div>
+
+<% data.staff.board.each_slice(4) do |member_group| %>
+	<div class="row">
+		<% member_group.each do |member| %>
+			<div class="three columns">
+				<%= tag :img, :src => member.image, :style => "width:100%" %>
+		  		<strong><%= member.name %> '<%= member.year %></strong><br>
+		  		<%= member.role %>
+		  	</div>
+	  	<% end %>
+  	</div>
+<% end %>

@@ -1,0 +1,63 @@
+---
+board:
+  - name:  Mac Jones
+    year:  16
+    image: localhost
+    role:  Recording Studio
+
+  - name:  Frankie Illuzzi
+    year:  18
+    image: localhost
+    role:  Public Relations
+
+  - name:  Thomas Williams
+    year:  18
+    image: localhost
+    role:  Engineering
+
+  - name:  Jaz Turner
+    year:  18
+    image: localhost
+    role:  Events Director
+
+  - name:  Matt Marlin
+    year:  16
+    image: localhost
+    role:  Music Director
+
+  - name:  JJ Wanda
+    year:  16
+    image: localhost
+    role:  Software
+
+  - name:  Willem Ytsma
+    year:  16
+    image: localhost
+    role:  Public Relations
+
+  - name:  Joe Cericola
+    year:  16
+    image: localhost
+    role:  Program Director
+
+  - name:  Renan Dincer
+    year:  16
+    image: localhost
+    role:  General Manager
+
+  - name:  Marci Weinstein
+    year:  17
+    image: localhost
+    role:  Asst. General Manager
+
+  - name:  Joe Sluke
+    year:  17
+    image: localhost
+    role:  Chief Engineer
+
+  - name:  Mike Fogarty
+    year:  17
+    image: localhost
+    role:  Treasurer
+
+...

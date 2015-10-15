@@ -15,3 +15,5 @@ gem "tzinfo-data", platforms: [:mswin, :mingw, :jruby]
 
 #markdown processor
 gem "redcarpet"
+
+gem "turbolinks", require: false

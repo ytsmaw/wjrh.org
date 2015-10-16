@@ -16,4 +16,5 @@ gem "tzinfo-data", platforms: [:mswin, :mingw, :jruby]
 #markdown processor
 gem "redcarpet"
 
+#turbolinks speeds up pageloads and keeps the player playing
 gem "turbolinks", require: false

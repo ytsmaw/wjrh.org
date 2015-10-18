@@ -5,15 +5,15 @@ setInterval( "updateSongInfo();", 7000 );
 $(function() {
 	updateSongInfo = function(){
 
-		$('#djdata').load("/show_dj.php").replace(/(\r\n|\n|\r)/gm,"").fadeIn("slow");
-		$('#songdata').load("/show_song.php").fadeIn("slow");
+		$('#djdata').load("http://wjrh.org/show_dj.php").replace(/(\r\n|\n|\r)/gm,"").fadeIn("slow");
+		$('#songdata').load("http://wjrh.org/show_song.php").fadeIn("slow");
 	}
 });
 
 //first refresh
 $(document).ready(function(){
-		$('#djdata').load("/show_dj.php").replace(/(\r\n|\n|\r)/gm,"").fadeIn("slow");
-		$('#songdata').load("/show_song.php").fadeIn("slow");
+		$('#djdata').load("http://wjrh.org/show_dj.php").replace(/(\r\n|\n|\r)/gm,"").fadeIn("slow");
+		$('#songdata').load("http://wjrh.org/show_song.php").fadeIn("slow");
 });
 
 

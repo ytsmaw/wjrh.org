@@ -12,7 +12,7 @@ $(function() {
 
 //first refresh
 $(document).ready(function(){
-		$('#djdata').load("http://wjrh.org/show_dj.php").replace(/(\r\n|\n|\r)/gm,"").fadeIn("slow");
+		$('#djdata').load("http://wjrh.org/show_dj.php").fadeIn("slow");
 		$('#songdata').load("http://wjrh.org/show_song.php").fadeIn("slow");
 });
 

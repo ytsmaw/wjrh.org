@@ -33,12 +33,17 @@
 .main-title h1{
   font-family: "Open Sans Condensed", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-align: center;
-  margin-top: 20px;
 }
 
+.main-title {
+  margin-top: 10px;
+  margin-bottom: 20px;
+
+}
 .main-title p {
   font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-align: left;
+  font-size: 16px;
 }
 .main-title .button {
   font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -88,4 +93,3 @@ a:hover {
     width: 960px !important;
     margin-top: 50px;
 }
-

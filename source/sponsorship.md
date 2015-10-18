@@ -1,6 +1,6 @@
 ---
 layout: "simple-static"
-image: "https://placeholdit.imgix.net/~text?txtsize=90&bg=104235&txtclr=28e7b5&txt=960%C3%97480&w=960&h=480"
+image: http://media.wjrh.org/website-highlight/artist3.jpg
 ---
 
 # Sponsorship
@@ -48,4 +48,3 @@ Please [email](/contact) us details about your event no later than 3 weeks befor
 #### Outside Media Organizations
 
  We can help record phone interviews with faculty for broadcasting. Please [email](/contact) us details after confirming availability with factulty. Unfortunately we can't facilitate introductions to anyone at Lafayette.
-

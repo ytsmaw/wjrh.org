@@ -6,7 +6,7 @@
 </div>
 <div class="row main-title">
 	<div class="eight columns offset-by-two columns">
-		<h1>Staff</h3>
+		<h1>People</h3>
 	</div>
 	<div class="eight columns offset-by-two column">
 		<p>We're a 100% student run volunteer based organization and we're one of the biggest organizations on the Lafayette Campus. It doesn't make sense to put everyone who spends considerably amount of time contributing to the station here but we're going to do that anyway.</p>
@@ -19,7 +19,7 @@
 	<div class="row">
 		<% member_group.each do |member| %>
 			<div class="three columns">
-				<%= tag :img, :src => member.image, :style => "width:100%" %>
+				<%= tag :img, :src =>  member.image, :style => "width:100%" %>
 		  		<strong><%= member.name %> '<%= member.year %></strong><br>
 		  		<%= member.role %>
 		  	</div>

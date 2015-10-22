@@ -6,14 +6,15 @@
 </div>
 <div class="row main-title">
 	<div class="eight columns offset-by-two columns">
-		<h1>People</h3>
+		<h1>Station Leadership</h3>
 	</div>
 	<div class="eight columns offset-by-two column">
-		<p>We're a 100% student run volunteer based organization and we're one of the biggest organizations on the Lafayette College. We have a board that handles coordination and allocation of resources. We're organized lightly and in a flat structure. The board meets every Wednesday that is also a school day at 5 in the station.</p>
+		<p>We're a 100% student run volunteer based organization and we're one of the biggest organizations on the Lafayette College and we're a team of passionate people interested in Music, Broadcasting and Events.</p>
+		<p> We have a board that handles coordination and allocation of resources. We're organized lightly and in a flat structure. The board meets every Wednesday that is also a school day at 5 in the station. If you are an active DJ or a member of the community committed to Broadcasting, <a href="/joining-the-board">consider joining us</a>. We're always looking for people interested in taking responsibility in supporting our community and promoting our station.</p>
 	</div>
 </div>
 
-<% data.staff.board.each_slice(4) do |member_group| %>
+<% data.staff.board.shuffle.each_slice(4) do |member_group| %>
 	<div class="row">
 		<% member_group.each do |member| %>
 			<div class="three columns">

@@ -5,7 +5,7 @@ image: http://media.wjrh.org/website-highlight/culture2.jpg
 
 #Joining the Board
 
-General Expectations for a WJRH Board Member are:
+General expectations for a WJRH Board Member are:
 
 - 1 hour meeting time each week
 - Willing to learn
@@ -36,7 +36,7 @@ General Manager, Assistant General Manager, Treasurer and the Chief Engineer is 
 
 #### Events Director
 - Responsible of organizing and managing WJRH sponsored events
-- Acts as an intermediary between WJRH and other organizations on campus
+- Acts as an intermediary between WJRH and other organizations
 - Responsible of making preparation / reservations for events
 - Keeps track of responsibilities
 
@@ -50,6 +50,7 @@ General Manager, Assistant General Manager, Treasurer and the Chief Engineer is 
 - Takes notes during meetings and distributes minutes
 - Keeps track of responsibilities and regular duties within the board
 - Facilitates internal communication
+- Leads the Black Light committee
 
 #### Music Director
 - The music director is responsible for screening music that is sent to WJRH

@@ -1,0 +1,42 @@
+
+.program-episodes > .line {
+  margin-bottom: 60px;
+  margin-top: 40px;
+  border-bottom: 1px solid lightgray;
+}
+
+.program-episodes > .line:last-of-type {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  border-bottom: 0px solid lightgray;
+}
+
+.program-episodes p {
+  font-size: 14px;
+}
+
+.episode-audio {
+  width: 100%;
+}
+
+
+.program-info{
+  margin-bottom: 60px;
+}
+
+.program-info p {
+  font-size: 18px;
+}
+
+.program-info h1{
+  text-align: center;
+}
+
+.covercontainer{
+  height: 480px;
+  width: 100%;
+  overflow: hidden;
+}
+.coverimage{
+  width: 100%;
+}

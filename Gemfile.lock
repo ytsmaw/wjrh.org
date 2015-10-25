@@ -165,6 +165,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  json
   middleman (~> 3.4.0)
   middleman-livereload (~> 3.1.0)
   redcarpet

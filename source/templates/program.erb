@@ -1,0 +1,33 @@
+<div class="row">
+	<div class="twelve columns covercontainer">
+		<%= tag :img, :src => program['image'], :class => "coverimage" %>
+	</div>
+</div>
+<div class="row program-info">
+	<div class="twelve columns">
+		<h1><%= program['name'] %></h1>
+	</div>
+	<div class="ten columns offset-by-one">
+		<p><%= program['description'] %></p>
+	</div>
+</div>
+
+	<div class="program-episodes">
+		<% program['episodes'].reverse.each do |episode| %>
+		<div class="row">
+			<div class="three columns offset-by-one">
+				<%= tag :img, :src => episode['image'], :style => "width: 100%" %>
+			</div>
+			<div class="seven columns">
+					<h3><%= episode['name'] %></h3>
+					<p><%= episode['description'] %></p>
+					<% episode['medias'].each do |media| %>
+						<audio class="episode-audio" controls>
+						  <source src="<%= media["url"] %>" type="<%= media["type"] %>">
+						</audio>
+					<% end %>
+			</div>
+		</div>
+		<div class="line ten columns offset-by-one"></div>
+	<% end %>
+</div>

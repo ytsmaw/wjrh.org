@@ -1,4 +1,5 @@
-
+require 'json'
+require 'net/http'
 
 ###
 # Compass
@@ -8,9 +9,17 @@ set :markdown, :fenced_code_blocks => true, :smartypants => true
 
 activate :directory_indexes
 
-shows = [{:shortname => "vbb", :description => "desc"}]
-shows.each do |show|
-  proxy "/#{show[:shortname]}.html", "/templates/show.html", :locals => { :show => show },:ignore => true
+
+
+# retrieve program information
+programs_req_url = URI.parse("http://localhost:9000/programs")
+programs_req = Net::HTTP.get_response(programs_req_url)
+@programs = JSON.parse(programs_req.body)
+@programs.each do |programPreview|
+  program_req_url = URI.parse("http://localhost:9000/programs/#{programPreview['shortname']}")
+  program_req = Net::HTTP.get_response(program_req_url)
+  program = JSON.parse(program_req.body)
+  proxy "/#{programPreview['shortname']}.html", "/templates/program.html", :locals => { :program => program, :title => program["name"] },:ignore => true
 end
 
 
@@ -84,6 +93,3 @@ configure :build do
   # set :http_prefix, "/Content/images/"
 
 end
-
-
-

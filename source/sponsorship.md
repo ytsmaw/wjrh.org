@@ -38,6 +38,8 @@ Please contact the [Events Director](/people) using your Lafayette email account
 
 We will get back to you with additional questions. We meet on every Wednesday the school is in session. Expect a definite answer the following Wednesday.
 
+If this is your first time seeking WJRH sponsorship, you can view an [example letter](/example-event-proposal/).
+
 We reserve the right to refuse sponsorship.
 
 ## Community organizations

@@ -1,4 +1,4 @@
-var listenButton = document.getElementById('listen-button');
+
 
 var audioElement = document.createElement('audio');
 audioElement.src = "http://wjrh.org:8000/WJRHlow";
@@ -10,6 +10,7 @@ var loaded = false;
 //plays wjrh audio
 function PlayAudio()
 {
+	var listenButton = document.getElementById('listen-button');
 	playClicked = true;
 	listenButton.innerHTML = "<i class=\"fa fa-2x fa-fw fa-spinner fa-spin\"></i>";
 	audioElement.load;
@@ -22,6 +23,7 @@ function PlayAudio()
 //pauses wjrh audio
 function PauseAudio()
 {
+	var listenButton = document.getElementById('listen-button');
 	audioElement.pause();
 	listenButton.innerHTML = "<i class=\"fa fa-2x fa-fw fa-play\"></i>";
 }
@@ -30,13 +32,14 @@ function PauseAudio()
 function togglePlay() {
 	if (audioElement.paused) {
 		PlayAudio();
-	} else { 
+	} else {
 		PauseAudio();
 	}
 }
 
 //called when we want "live on air" displayed on the button
 function liveOnAir(){
+	var listenButton = document.getElementById('listen-button');
 	listenButton.innerHTML = "<i class=\"fa fa-2x fa-fw fa-pause\"></i>";
 }
 
@@ -47,3 +50,11 @@ audioElement.onloadeddata = function() {
 		liveOnAir();
 	}
 };
+$(document).on('page:change', function(event) {
+	var listenButton = document.getElementById('listen-button');
+	if (audioElement.paused) {
+		listenButton.innerHTML = "<i class=\"fa fa-2x fa-fw fa-play\"></i>";
+	} else {
+		listenButton.innerHTML = "<i class=\"fa fa-2x fa-fw fa-pause\"></i>";
+	}
+});

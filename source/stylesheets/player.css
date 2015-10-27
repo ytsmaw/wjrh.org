@@ -31,6 +31,10 @@ li.nowplaying {
 
 }
 
+#djdata, #songdata {
+  text-transform: uppercase;
+}
+
 li.nowplaying i{
     margin-right: .3em;
 }
@@ -49,4 +53,3 @@ li.nowplaying .fa-2x {
 li.nowplaying div{
     display: inline;
 }
-

@@ -1,7 +1,9 @@
 <div class="row">
-	<div class="twelve columns covercontainer">
+	<hr>
+
+	<!-- <div class="twelve columns covercontainer">
 		<%= tag :img, :src => program['image'], :class => "coverimage" %>
-	</div>
+	</div> -->
 </div>
 <div class="row program-info">
 	<div class="twelve columns">
@@ -22,7 +24,7 @@
 					<h3><%= episode['name'] %></h3>
 					<p><%= episode['description'] %></p>
 					<% episode['medias'].each do |media| %>
-						<audio class="episode-audio" controls>
+						<audio class="episode-audio" controls preload="none">
 						  <source src="<%= media["url"] %>" type="<%= media["type"] %>">
 						</audio>
 					<% end %>

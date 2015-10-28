@@ -4,6 +4,14 @@ image: http://media.wjrh.org/website-highlight/artist3.jpg
 ---
 
 # Example Sponsorship Proposal
+##### Here is what we like about this letter:
+- It answers most of the questions we've asked, although it doesn't specify a date
+- It specifies the person in charge that we can communicate with
+- The person in charge has started a communication channel with persons involved
+- Provides links we take take a look at
+- It provides a budget estimate
+- It specifies the rain location
+- It is not last minute (more than 2 weeks alloted)
 
 ```
 Hey WJRH,

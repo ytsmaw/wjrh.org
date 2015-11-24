@@ -3,5 +3,5 @@ layout: "simple-static"
 image: http://media.wjrh.org/website-highlight/artist3.jpg
 ---
 
-# Joining the Station
+# Getting Involved at the Station
 ## Why join?

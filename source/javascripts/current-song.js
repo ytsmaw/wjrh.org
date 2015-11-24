@@ -5,6 +5,7 @@ setInterval( "updateSongInfo();", 4000 );
 $(function() {
 	updateSongInfo = function(){
 
+		var djdata = document.getElementById('djdata');
 		$('#djdata').load("http://wjrh.org/show_dj.php").fadeIn("slow");
 		$('#songdata').load("http://wjrh.org/show_song.php").fadeIn("slow");
 	}
@@ -12,8 +13,9 @@ $(function() {
 
 //first refresh
 $(document).ready(function(){
-		$('#djdata').load("http://wjrh.org/show_dj.php").fadeIn("slow");
-		$('#songdata').load("http://wjrh.org/show_song.php").fadeIn("slow");
+	var djdata = document.getElementById('djdata');
+	$('#djdata').load("http://wjrh.org/show_dj.php").fadeIn("slow");
+	$('#songdata').load("http://wjrh.org/show_song.php").fadeIn("slow");
 });
 
 

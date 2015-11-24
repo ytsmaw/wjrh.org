@@ -32,7 +32,7 @@ li.nowplaying {
 }
 
 #djdata, #songdata {
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
 }
 
 li.nowplaying i{

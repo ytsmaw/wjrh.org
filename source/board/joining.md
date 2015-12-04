@@ -22,7 +22,7 @@ You will not be told what to work on, instead you'll decide what to work on afte
 Organizing events, bringing bands, starting new tech projects all begin by you bringing up at the board meeting. Remember that the WJRH community is larger than the board. Reach out to DJs, send out emails and soon you'll have your idea up and running. In the end, what you choose to work on during your time on the station Board will guide the way the station grows.
 
 ### Positions on the Board
-We have the following nine positions on the board:
+We have the following nine positions on the board ([job descriptions here](/board/positions)):
 
 - Program Director
 - Events Director

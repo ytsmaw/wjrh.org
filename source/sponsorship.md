@@ -20,8 +20,8 @@ We're always happy to sponsor/co-sponsor events held at Lafayette College, hoste
 
 - "We just need a mic and a pair of speakers"
 - "Please play music on the quad while we do our own unrelated activity"
-- Please give us money so that we can do our unrelated activity
-- Please spread the word about our unrelated activity to your members / disk jockeys
+- "Please give us money so that we can do our unrelated activity"
+- "Please spread the word about our unrelated activity to your members / disk jockeys"
 - Large events lacking other sponsors / credibility
 
 #### Contacting us regarding events

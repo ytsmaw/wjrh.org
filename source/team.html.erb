@@ -1,0 +1,35 @@
+<%-# THIS FILE USES THE DATA FROM THE DATA FOLDER TO AUTOMATICALLY ADD STAFF MEMBERS GO CHANGE POSITIONS AND BOARD MEMBERS THERE PLEASE THANK YOU-%>
+<div class="row">
+	<div class="twelve columns">
+		<%= tag :img, :src =>  data.domains.media + "/website-highlight/culture2.jpg"%>
+	</div>
+</div>
+<div class="row">
+	<div class="eight columns offset-by-two columns">
+		<h1>Our Team</h1>
+	</div>
+	<div class="eight columns offset-by-two column">
+		<p>We're a team of passionate people interested in Music, Broadcasting and Events. If you're interested in joining our leadership team, we're always looking for people interested in taking responsibility in supporting our community of music lovers and promoting our station. <a href="/board/joining">Read about joining us.</a></p>
+	</div>
+</div>
+
+<% data.staff.board2016.shuffle.each_slice(4) do |member_group| %>
+	<div class="row">
+		<% member_group.each do |member| %>
+			<div class="three columns">
+				<%= tag :img, :src => member.image, :class => "boardmember" %>
+		  		<strong><%= member.name %> '<%= member.year %></strong><br>
+		  		<%= member.role %>
+		  	</div>
+	  	<% end %>
+  	</div>
+<% end %>
+<!-- <div class="row">
+	<div class="eight columns offset-by-two columns">
+			<h1>Black Light Committee</h1>
+		<% data.staff.board2015.select { |member| member.year < 17 }.shuffle.each do |member| %>
+		  		<strong><%= member.name %> '<%= member.year %></strong> (<%= member.role %>) 
+		<% end %>
+	</div>
+</div> -->
+

@@ -20,7 +20,9 @@ programs_req = Net::HTTP.get_response(programs_req_url)
   program_req = Net::HTTP.get_response(program_req_url)
   program = JSON.parse(program_req.body)
   proxy "/#{programPreview['shortname']}.html", "/templates/program.html", :locals => { :program => program, :title => program["name"] },:ignore => true
+  proxy "/#{programPreview['shortname']}/feed.xml", "/templates/feed.html", :locals => { :program => program },:ignore => true, :directory_index => false, :layout => false
 end
+
 
 
 page "*.md", :layout => "markdown"

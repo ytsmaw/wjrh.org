@@ -20,3 +20,5 @@ gem "redcarpet"
 
 #turbolinks speeds up pageloads and keeps the player playing
 gem "turbolinks", require: false
+
+gem "nokogiri"

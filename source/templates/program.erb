@@ -10,7 +10,7 @@
 		<h1><%= program['name'] %></h1>
 	</div>
 	<div class="ten columns offset-by-one">
-		<p><%= program['description'] %></p>
+		<p><%= Tilt['markdown'].new { program['description'] }.render  %></p>
 	</div>
 </div>
 

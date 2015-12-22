@@ -22,5 +22,7 @@ Welcome to the Board! Thanks for deciding on joining the station! There are a fe
 12. If you're the chief engineer, take control and add yourself to the administrator and moderator lists on all three mailman lists.
 13. If you're the chief engineer, add yourself as an admin to google analytics
 14. If you're the chief engineer, take control of the servers
+15. If you're the chief engineer, take control of the aws account
+16. If you're the chief engineer, take control of google docs account
 
 Don't worry, seniors are still around for an other semester to help you get things done. Feel free to send an email to the Board email distribution list for help.

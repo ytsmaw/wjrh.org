@@ -2,25 +2,19 @@
 <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
 	<channel>
 		<title><%= program["name"] %></title>
-		<link>https://twitter.com/somelaterdate</link>
-		<language>en-us</language>
-		<copyright>&#xA9; 2015 WJRH - Creative Commons Attribution-ShareAlike 4.0 International</copyright>
+		<link>http://wjrh.org/<%= program["shortname"]%></link>
+		<copyright><%= program["copyright"] %></copyright>
 		<itunes:subtitle><%= program["subtitle"] %></itunes:subtitle>
-		<itunes:author><%= program['creators'].join(" and ") %></itunes:author>
-		<itunes:summary><![CDATA[<%= program['description'] %>]]></itunes:summary>
-		<description><%= program["description"] %></description>
-		<itunes:owner>
-			<itunes:name>Renan Dincer</itunes:name>
-			<itunes:email>renandincer+vbbpodcast@gmail.com</itunes:email>
-		</itunes:owner>
-		<itunes:category text="Society &amp; Culture"/>
+		<itunes:author><%= program['creators'].join(", ") %></itunes:author>
+		<itunes:summary><![CDATA[<% if not program['description'].nil?%><%= Tilt['markdown'].new { program['description'] }.render  %><% end %>]]></itunes:summary>
+		<description><![CDATA[<% if not program['description'].nil?%><%= Tilt['markdown'].new { program['description'] }.render  %><% end %>]]></description>
 		<itunes:image href="http://wjrh.org/vbb/logo2.jpg" />
 		<% program['episodes'].each do |episode| %>
 		<item>
 			<title><%= episode['name'] %></title>
 			<itunes:author><%= program['creators'].join(" and ") %></itunes:author>
-			<itunes:subtitle><%= episode['description'] %></itunes:subtitle>
-			<itunes:summary><%= episode['description'] %></itunes:summary>
+			<itunes:subtitle><![CDATA[<% if not episode['description'].nil?%><%= Tilt['markdown'].new { episode['description'] }.render  %><% end %>]]</itunes:subtitle>
+			<itunes:summary><![CDATA[<% if not episode['description'].nil?%><%= Tilt['markdown'].new { episode['description'] }.render  %><% end %>]]</itunes:summary>
 			<itunes:image href="<%= episode['image'] %>" />
 			<% episode['medias'].each do |media| %>
 			<enclosure url="<%= media["url"] %>" length="<%= media["length"] %>" type="<%= media["type"] %>" />

@@ -22,7 +22,7 @@
 			<div class="seven columns">
 					<h3><%= episode['name'] %></h3>
 					<p><strong>Length:</strong> <%= episode['medias'].first["length"] %>, <strong>Released on</strong> <%= DateTime.parse(episode['pubdate']).strftime("%A, %B %e, %Y") %></p>
-					<p><%= episode['description'] %></p>
+					<p><% if not episode['description'].nil?%> <%= Tilt['markdown'].new { episode['description'] }.render  %> <% end %></p>
 					<% episode['medias'].each do |media| %>
 						<audio class="episode-audio" controls preload="none">
 						  <source src="<%= media["url"] %>" type="<%= media["type"] %>">

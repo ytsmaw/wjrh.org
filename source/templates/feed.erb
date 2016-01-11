@@ -6,20 +6,20 @@
 		<copyright><%= program["copyright"] %></copyright>
 		<itunes:subtitle><%= program["subtitle"] %></itunes:subtitle>
 		<itunes:author><%= program['creators'].join(", ") %></itunes:author>
-		<itunes:summary><![CDATA[<% if not program['description'].nil?%><%= Tilt['markdown'].new { program['description'] }.render  %><% end %>]]></itunes:summary>
-		<description><![CDATA[<% if not program['description'].nil?%><%= Tilt['markdown'].new { program['description'] }.render  %><% end %>]]></description>
+		<itunes:summary><![CDATA[<% if not program['description'].nil?%><%= Tilt['markdown'].new { program['description'] }.render.encode(:xml => :text)  %><% end %>]]></itunes:summary>
+			<description><![CDATA[<% if not program['description'].nil?%><%= Tilt['markdown'].new { program['description'] }.render.encode(:xml => :text)  %><% end %>]]></description>
 		<itunes:image href="http://wjrh.org/vbb/logo2.jpg" />
 		<% program['episodes'].each do |episode| %>
 		<item>
 			<title><%= episode['name'] %></title>
 			<itunes:author><%= program['creators'].join(" and ") %></itunes:author>
-			<itunes:subtitle><![CDATA[<% if not episode['description'].nil?%><%= Tilt['markdown'].new { episode['description'] }.render  %><% end %>]]</itunes:subtitle>
-			<itunes:summary><![CDATA[<% if not episode['description'].nil?%><%= Tilt['markdown'].new { episode['description'] }.render  %><% end %>]]</itunes:summary>
+			<itunes:subtitle><![CDATA[<% if not episode['description'].nil?%><%= Tilt['markdown'].new { episode['description'] }.render.encode(:xml => :text)  %><% end %>]]</itunes:subtitle>
+			<itunes:summary><![CDATA[<% if not episode['description'].nil?%><%= Tilt['markdown'].new { episode['description'] }.render.encode(:xml => :text)  %><% end %>]]</itunes:summary>
 			<itunes:image href="<%= episode['image'] %>" />
 			<% episode['medias'].each do |media| %>
 			<enclosure url="<%= media["url"] %>" length="<%= media["length"] %>" type="<%= media["type"] %>" />
 			<% end %>
-			<guid><%= episode["guid"] %></guid>
+			<guid><%= episode["guid"] ||= episode["id"]%></guid>
 			<pubDate><%= Time.parse(episode["pubdate"]).rfc2822 %></pubDate>
 			<itunes:duration><%= episode['medias'][0]["length"] %></itunes:duration>
 		</item>

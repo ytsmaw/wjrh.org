@@ -1,6 +1,7 @@
 require 'json'
 require 'net/http'
 
+
 ###
 # Compass
 ###
@@ -65,11 +66,11 @@ page "*.md", :layout => "markdown"
 # end
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+ helpers do
+   def generatefeed(program)
+     "kk"
+   end
+ end
 
 set :css_dir, 'stylesheets'
 

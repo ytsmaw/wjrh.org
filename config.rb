@@ -75,7 +75,7 @@ activate :automatic_image_sizes
    #  # }
    #  # res = http.get(uri.path, headers)
    #  req = Net::HTTP::Get.new(uri.path)
-   #  req.add_field("Authorization", "Client-ID 6ce09c0ab1bf220")
+   #  req.add_field("Authorization", "Client-ID something")
    #  http = Net::HTTP.new(uri.host, uri.port)
    #  http.use_ssl = true
    #  res = http.start do |h|

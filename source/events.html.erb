@@ -1,0 +1,67 @@
+<div class="row">
+  
+  <div class="twelve columns covercontainer">
+    <%= tag :img, :src => "http://media.wjrh.org/website-highlight/artist6.jpg", :class => "coverimage" %>
+  </div>
+</div>
+<div class="row">
+  <div class="twelve columns">
+    <h1>Events</h1>
+  </div>
+  <div class="ten columns offset-by-one">
+    <p>Events are a vital part of our existance. Every year we bring a number of artists for local shows. We also organize trips to the local music scene. Performances are often hosted on the Lafayette College campus and is open to the local community in the Lehigh Valley. If you have any questions on attending our events, contact us.</p>
+  </div>
+</div>
+
+<div class="events">
+
+  <div class="row">
+    <div class="ten columns offset-by-one">
+      <h3>Upcoming Events</h3>
+      <table class="u-full-width">
+        <thead>
+          <tr>
+            <th>What</th>
+            <th>When</th>
+            <th>Where</th>
+          </tr>
+        </thead>
+        <% data.events.select { |k| Time.parse(k['when'], Time.now) > Time.now }.sort_by { |k| Time.parse(k['when'], Time.now)}.each do |event| %>
+        <tbody>
+          <tr>
+            <td><%= event['what'] %></td>
+            <td><%= Time.parse(event['when'], Time.now.getlocal("+05:00")).strftime("%b %-d, %Y at %l %p") %></td>
+            <td><%= event['where'] %></td>
+          </tr>
+        </tbody>
+        <% end %>
+      </table>
+    </div>
+  </div>
+
+    <div class="row">
+    <div class="ten columns offset-by-one">
+      <h3>Past Events</h3>
+      <table class="u-full-width">
+        <thead>
+          <tr>
+            <th>What</th>
+            <th>When</th>
+            <th>Where</th>
+          </tr>
+        </thead>
+        <% data.events.select { |k| Time.parse(k['when'], Time.now) < Time.now }.sort_by { |k| Time.parse(k['when'], Time.now)}.reverse.each do |event| %>
+        <tbody>
+          <tr>
+            <td><%= event['what'] %></td>
+            <td><%= Time.parse(event['when'], Time.now.getlocal("+05:00")).strftime("%b %-d, %Y at %l %p") %></td>
+            <td><%= event['where'] %></td>
+          </tr>
+        </tbody>
+        <% end %>
+      </table>
+    </div>
+  </div>
+  
+
+</div>

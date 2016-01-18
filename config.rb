@@ -58,7 +58,7 @@ page "*.md", :layout => "markdown"
 ###
 
 # Automatic image dimensions on image_tag helper
-# activate :automatic_image_sizes
+activate :automatic_image_sizes
 
 # Reload the browser automatically whenever files change
 # configure :development do
@@ -67,49 +67,78 @@ page "*.md", :layout => "markdown"
 
 # Methods defined in the helpers block are available in templates
  helpers do
+   # def getimguralbumimages(album_id)
+   #  uri = URI.parse("https://api.imgur.com/3/album/#{album_id}/images")
+   #  # http = Net::HTTP.new(uri.host, uri.port)
+   #  # headers = {
+   #  #     'Authorization' => "Client-ID 6ce09c0ab1bf220"
+   #  # }
+   #  # res = http.get(uri.path, headers)
+   #  req = Net::HTTP::Get.new(uri.path)
+   #  req.add_field("Authorization", "Client-ID 6ce09c0ab1bf220")
+   #  http = Net::HTTP.new(uri.host, uri.port)
+   #  http.use_ssl = true
+   #  res = http.start do |h|
+   #    h.request(req)
+   #  end
+   #  images = JSON.parse(res.body)
+   #  return images.data
+   # end
+
+
    def generatefeed(program)
      feed = Nokogiri::XML::Builder.new do |xml|
-			 xml.rss('xmlns:itunes' => "http://www.itunes.com/dtds/podcast-1.0.dtd") do
-				 xml.channel do
-				   xml.title program["name"]
-				   xml.link "http://wjrh.org/#{program["shortname"]}"
-					 xml.copyright program["copyright"]
-					 xml['itunes'].subtitle program["subtitle"]
-					 xml['itunes'].author program["creators"].join(", ")
-					 if not program['description'].nil?
-						 xml['itunes'].summary {
-							 xml.cdata Tilt['markdown'].new { program['description'] }.render
-						 }
-						 xml.description {
-							 xml.cdata Tilt['markdown'].new { program['description'] }.render
-						 }
-					 end
-					 xml['itunes'].image('href' => "http://wjrh.org/vbb/logo2.jpg")
-					 program['episodes'].each do |episode|
-						 xml.item do
-							 xml.title episode['name']
-							 xml['itunes'].author program['creators'].join(", ")
-							 if not episode['description'].nil?
-						 		 xml['itunes'].subtitle {
-									xml.cdata Tilt['markdown'].new { episode['description'] }.render
-						 	 	 }
-						 		 xml['itunes'].summary {
-							 		xml.cdata Tilt['markdown'].new { episode['description'] }.render
-							   }
-					 		 end
-							 xml['itunes'].image("href" => episode['image'])
-							 episode["medias"].each do |media|
-								 xml.enclosure("url" => media["url"], "length" => media["length"], "type" => media["type"])
-							 end
-							 xml.guid episode["guid"] ||= episode["id"]
-							 xml.pubDate Time.parse(episode["pubdate"]).rfc2822
-							 xml['itunes'].duration episode['medias'][0]['length']
-						 end
-					 end 
-				 end
-			 end
-		 end
-		 return feed.to_xml
+       xml.rss('xmlns:itunes' => "http://www.itunes.com/dtds/podcast-1.0.dtd", 'version' => '2.0') do
+
+         #insert program information
+         xml.channel do
+           xml.title program["name"]
+           xml.link "http://wjrh.org/#{program["shortname"]}"
+           xml['itunes'].image('href' => "http://wjrh.org/vbb/logo2.jpg")
+           
+           xml.copyright program["copyright"] if program ["copyright"]
+           xml['itunes'].subtitle program["subtitle"] if program["subtitle"]
+           xml['itunes'].author program["creators"].join(", ") if program["creators"]
+           xml['itunes'].category("text" => program["itunescategory"]) if program["itunescategory"]
+
+           if program['description']
+             xml['itunes'].summary {
+               xml.cdata Tilt['markdown'].new { program['description'] }.render
+             }
+             xml.description {
+               xml.cdata Tilt['markdown'].new { program['description'] }.render
+             }
+           end
+
+           #insert each episode in this episode
+           program['episodes'].each do |episode|
+             xml.item do
+               xml.title episode['name']
+               xml['itunes'].author program['creators'].join(", ")
+               xml.guid episode["guid"] ||= episode["id"]
+               xml['itunes'].image("href" => episode['image'])
+               xml.pubDate Time.parse(episode["pubdate"]).rfc2822
+               xml['itunes'].duration episode['medias'][0]['length']
+               
+               if episode['description']
+                 xml['itunes'].subtitle {
+                  xml.cdata Tilt['markdown'].new { episode['description'] }.render
+                 }
+                 xml['itunes'].summary {
+                  xml.cdata Tilt['markdown'].new { episode['description'] }.render
+                 }
+               end
+
+               episode["medias"].each do |media|
+                 xml.enclosure("url" => media["url"], "length" => media["length"], "type" => media["type"])
+               end
+               
+             end
+           end 
+         end
+       end
+     end
+     return feed.to_xml
    end
  end
 
@@ -122,10 +151,10 @@ set :images_dir, 'images'
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
-  # activate :minify_css
+  activate :minify_css
 
   # Minify Javascript on build
-  # activate :minify_javascript
+  activate :minify_javascript
 
   # Enable cache buster
   # activate :asset_hash

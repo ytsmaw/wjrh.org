@@ -1,0 +1,11 @@
+.row > .line {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border-bottom: 1px solid lightgray;
+}
+
+.row > .line:last-of-type {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  border-bottom: 0px solid lightgray;
+}

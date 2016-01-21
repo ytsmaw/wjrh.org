@@ -1,4 +1,12 @@
- # supported fields: what, when, time, where, imgur_album_id, description, imgur_image_id, facebook_link
+ # supported fields: what, when, where, imgur_album_id
+ # THE WEBSITE WILL DISPLAY UPCOMING EVENTS AS A LIST
+ # THE WEBSITE WILL ALSO LIST 10 PAST EVENTS
+ # IMAGES SHOWN WILL BE FROM THE FIRST 5 PICTURES OF PAST 5 EVENTS WITH IMGUR ALBUMS
+
+ # to add new events, just follow the format and add events.
+ # to add images, upload images to a imgur album and put the end of the link to the album here as shown
+ # it is ok not to have pictures as long as "what", "when" and "where" is filled.
+ # please follow YYYY-MM-DD order with dates
 ---
 
 - what: Grooms
@@ -12,23 +20,26 @@
 - what: Baloon Ride Fantasy
   when: 2015-09-04 4pm
   where: Quad
-  imgur_image_id: XVueRve
   imgur_album_id: 7vNFT
 
 - what: Morningsiders
   when: 2015-11-13 8pm
   where: Kirby House Lounge
+  imgur_album_id: FBVGi
 
 - what: Hoochie Coochie Men and Joe Montone of Heat Thunder
   when: 2015-02-13 8pm
   where: Cosmic Cup Coffee
+  imgur_album_id: KyUHU
 
 - what: VoirVoir and William H Travis
   when: 2015-05-06 6pm
   where: Quad
+  imgur_album_id: 4jvEq
 
 - what: "Scene Trip (Slingshot Dakota + VoirVoir)"
   when: 2015-11-07 7pm
   where: The Ice House
+  imgur_album_id: VxI1P
 
 ...

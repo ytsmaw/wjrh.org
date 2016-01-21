@@ -1,7 +1,7 @@
 require 'json'
 require 'net/http'
 require 'nokogiri'
-
+require 'keys'
 ###
 # Compass
 ###
@@ -13,7 +13,7 @@ activate :directory_indexes
 
 
 # retrieve program information
-programs_req_url = URI.parse("http://localhost:9000/programs")
+programs_req_url = URI.parse("#{ENV["TEAL_URL"] ||=TEAL_URL}/programs")
 programs_req = Net::HTTP.get_response(programs_req_url)
 @programs = JSON.parse(programs_req.body)
 @programs.each do |programPreview|
@@ -67,23 +67,18 @@ activate :automatic_image_sizes
 
 # Methods defined in the helpers block are available in templates
  helpers do
-   # def getimguralbumimages(album_id)
-   #  uri = URI.parse("https://api.imgur.com/3/album/#{album_id}/images")
-   #  # http = Net::HTTP.new(uri.host, uri.port)
-   #  # headers = {
-   #  #     'Authorization' => "Client-ID 6ce09c0ab1bf220"
-   #  # }
-   #  # res = http.get(uri.path, headers)
-   #  req = Net::HTTP::Get.new(uri.path)
-   #  req.add_field("Authorization", "Client-ID something")
-   #  http = Net::HTTP.new(uri.host, uri.port)
-   #  http.use_ssl = true
-   #  res = http.start do |h|
-   #    h.request(req)
-   #  end
-   #  images = JSON.parse(res.body)
-   #  return images.data
-   # end
+    def getimguralbumimages(album_id)
+     	uri = URI.parse("https://api.imgur.com/3/album/#{album_id}/images")
+      http = Net::HTTP.new(uri.host, uri.port)
+    	req = Net::HTTP::Get.new(uri.path)
+   	  req.add_field("Authorization", "Client-ID #{ENV["IMGUR_CLIENT_ID"] ||=IMGUR_CLIENT_ID}")
+   	  http.use_ssl = true
+     	res = http.start do |h|
+      	 h.request(req)
+     	end
+     	images = JSON.parse(res.body)
+			return images["data"]
+    end
 
 
    def generatefeed(program)
